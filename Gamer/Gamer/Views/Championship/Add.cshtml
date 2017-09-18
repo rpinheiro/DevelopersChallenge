@@ -1,0 +1,64 @@
+﻿@model Gamer.Models.ChampionshipViewModel
+<br />
+<br />
+@using (Html.BeginForm())
+{
+    <!-- Hidden with controller action -->
+    @Html.Hidden("SaveAction", Url.Action("SaveChampionship", "Championship"))
+    @Html.Hidden("AddPlayerAction", Url.Action("AddChampionshipPlayer", "Championship"))
+    <div>
+        <div class="alert" id="divStatus" style="display: none">
+            <strong></strong>
+        </div>
+
+        <!-- Form fields -->
+        <div class="row">
+            <div class="form-group col-md-4">
+                @Html.Hidden("ChampionshipId", Model.ChampionshipId)
+                @Html.LabelFor(model => model.ChampionshipName)
+                @Html.EditorFor(model => model.ChampionshipName)
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4" style="margin: 15px;">
+                @Html.LabelFor(model => model.PlayersString)
+                @Html.DropDownListFor(model => Model.Players,
+    ((IEnumerable<Gamer.Models.PlayerViewModel>)Model.Players).OrderBy(c => c.PlayerName).Select(option => new SelectListItem
+    {
+        Text = option.PlayerName,
+        Value = option.PlayerId.ToString()
+    }), "Escolha um jogador...", null)
+                <button id="btnAddPlayer" type="button" class="btn">Adicionar jogador</button>
+
+                <div class="table-responsive col-md-12" id="divPlayers">
+                    <table id="tblResult" class="table table-striped" cellspacing="0" cellpadding="0" style="display: none">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th class="actions">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Partial with players list of championship -->
+                            @Html.Partial("RowTableChampionshipPlayer", Model.PlayersAdded)
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+
+        <hr />
+        <div id="actions" class="row">
+            <div class="col-md-12">
+                <button id="btnSaveChampionship" type="button" class="btn btn-primary">Salvar</button>
+                <a id="btnCancel" href="#" class="btn btn-default">Cancelar</a>
+            </div>
+        </div>
+
+
+    </div>
+
+    @Scripts.Render("~/bundles/championshipadd")
+}

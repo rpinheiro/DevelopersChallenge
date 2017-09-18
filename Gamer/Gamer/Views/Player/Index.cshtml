@@ -1,0 +1,57 @@
+﻿<!-- Hidden with actions -->
+@Html.Hidden("SearchAction", Url.Action("Search", "Player"))
+@Html.Hidden("EditAction", Url.Action("Add", "Player"))
+@Html.Hidden("DeleteAction", Url.Action("Delete", "Player"))
+
+<div id="main" class="container-fluid">
+    <div id="top">
+        <div id="title" class="row">
+            <div class="col-md-3">
+                <h2>Jogadores</h2>
+            </div>
+        </div>
+
+        <div id="fields" class="row">
+            <div class="col-md-6">
+                <div class="input-group h2">
+                    <input id="inputSearchPlayer" name="data[search]" class="form-control" id="search" type="text" placeholder="Nome do jogador">
+                    <span class="input-group-btn">
+                        <button id="btnSearchPlayer" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <a target="_blank" name="NovoJogador" class="btn btn-primary h2">Novo Jogador</a>
+            </div>
+        </div>
+    </div>    
+
+    <hr />
+
+    <div id="divSemResultado" style="display: none">
+        <p>Nenhum jogador encontrado.</p>
+    </div>
+
+    <div id="divListPlayer" class="row">
+        <div class="table-responsive col-md-12">
+            <table id="tblResult" class="table table-striped" cellspacing="0" cellpadding="0" style="display: none">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th class="actions">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    
+</div>
+
+
+@Scripts.Render("~/bundles/playersearch")

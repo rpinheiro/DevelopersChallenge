@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamer", "Gamer\Gamer.csproj", "{9861D213-D92A-47BE-A5A1-4F52FBA0DFCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamer.Tests", "Gamer.Tests\Gamer.Tests.csproj", "{1E56ED82-DD66-4DEA-B897-ED34F724A923}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9861D213-D92A-47BE-A5A1-4F52FBA0DFCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9861D213-D92A-47BE-A5A1-4F52FBA0DFCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9861D213-D92A-47BE-A5A1-4F52FBA0DFCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9861D213-D92A-47BE-A5A1-4F52FBA0DFCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E56ED82-DD66-4DEA-B897-ED34F724A923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E56ED82-DD66-4DEA-B897-ED34F724A923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E56ED82-DD66-4DEA-B897-ED34F724A923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E56ED82-DD66-4DEA-B897-ED34F724A923}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,34 @@
+﻿@model Gamer.Models.PlayerViewModel
+<br />
+<br />
+@using (Html.BeginForm())
+{
+    <!-- Hidden with actions -->
+    @Html.Hidden("SaveAction", Url.Action("SavePlayer", "Player"))
+    @Html.ValidationSummary()
+    <div>
+        <div class="alert" id="divStatus" style="display: none">
+            <strong></strong>
+        </div>
+        <!-- area de campos do form -->
+        <div class="row">
+            <div class="form-group col-md-4">
+                @Html.Hidden("PlayerId", Model.PlayerId)
+                @Html.LabelFor(m => Model.PlayerName)
+                @Html.EditorFor(m => Model.PlayerName)
+            </div>
+        </div>
+
+        <hr />
+        <div id="actions" class="row">
+            <div class="col-md-12">
+                <button type="button" id="btnSavePlayer" class="btn btn-primary">Salvar</button>
+                <a id="btnCancel" href="#" class="btn btn-default">Cancelar</a>
+            </div>
+        </div>
+
+
+    </div>
+
+    @Scripts.Render("~/bundles/playeradd")    
+}

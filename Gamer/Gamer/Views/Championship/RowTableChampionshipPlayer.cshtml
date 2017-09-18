@@ -1,0 +1,15 @@
+﻿@model IList<Gamer.Models.ChampionshipPlayerRowViewModel>
+
+@if (Model != null && Model.Count > 0)
+{
+    <!-- create player rows of championship -->
+    foreach (Gamer.Models.ChampionshipPlayerRowViewModel player in Model)
+    {
+    <tr data-id="@player.PlayerId">
+        <td>@player.PlayerName</td>
+        <td class="actions">
+            <a class="btn btn-danger btn-xs" name="Excluir" href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+        </td>
+    </tr>   
+    }
+}
